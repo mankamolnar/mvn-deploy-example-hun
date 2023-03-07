@@ -4,13 +4,67 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github</groupId>
+    <groupId>com.github.mankamolnar</groupId>
     <artifactId>mvn.deploy.example.hun</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <name>Maven deploy example</name>
+    <description>
+        This is a sample library for publishing to mvn central.
+    </description>
+    <url>https://github.com/mankamolnar/mvn-deploy-example-hun</url>
+
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Mark Mano Molnar</name>
+            <email>markmanomolnar@gmail.com</email>
+            <organization>com.github.mankamolnar</organization>
+            <organizationUrl>https://github.com/mankamolnar/mvn-deploy-example-hun</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git://github.com/mankamolnar/mvn-deploy-example-hun.git</connection>
+        <developerConnection>scm:git:ssh://github.com:mankamolnar/mvn-deploy-example-hun.git</developerConnection>
+        <url>http://github.com/mankamolnar/mvn-deploy-example-hun/tree/master</url>
+    </scm>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.6.7</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>ossrh</serverId>
+                    <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
