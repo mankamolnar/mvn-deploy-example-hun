@@ -8,6 +8,7 @@
     <artifactId>mvn.deploy.example.hun</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
+    <name>mvn.deploy.example.hun</name>
 
     <description>
         This is a sample library for publishing to mvn central.
