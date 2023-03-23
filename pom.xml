@@ -6,7 +6,7 @@
 
     <groupId>io.github.mankamolnar</groupId>
     <artifactId>mvn.deploy.example.hun</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
     <name>HufConverter</name>
 
